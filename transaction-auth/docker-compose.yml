@@ -1,0 +1,16 @@
+version: "3.4"
+
+services:
+  transaction-auth:
+    build:
+        context: .
+        dockerfile: Dockerfile
+    image: transaction-auth:latest
+    ports:
+      - 8084:8084
+    networks:
+        - transaction-networks
+
+networks:
+    transaction-networks:
+        driver: bridge

@@ -1,0 +1,16 @@
+version: "3.4"
+
+services:
+  transaction-delivery-config-server:
+    build:
+        context: .
+        dockerfile: Dockerfile
+    image: transaction-delivery-config-server
+    ports:
+      - 9090:9090
+    networks:
+        - transaction-networks
+
+networks:
+    transaction-networks:
+        driver: bridge

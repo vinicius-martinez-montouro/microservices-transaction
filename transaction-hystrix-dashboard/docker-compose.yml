@@ -1,0 +1,16 @@
+version: "3.4"
+
+services:
+  transaction-hystrix-dashboard:
+    build:
+        context: .
+        dockerfile: Dockerfile
+    image: transaction-hystrix-dashboard:latest
+    ports:
+      - 7979:7979
+    networks:
+        - transaction-networks
+
+networks:
+    transaction-networks:
+        driver: bridge

@@ -1,0 +1,16 @@
+version: "3.4"
+
+services:
+  transaction-discovery:
+    build:
+        context: .
+        dockerfile: Dockerfile
+    image: transaction-discovery:latest
+    ports:
+      - 8081:8081
+    networks:
+        - transaction-networks
+
+networks:
+    transaction-networks:
+        driver: bridge

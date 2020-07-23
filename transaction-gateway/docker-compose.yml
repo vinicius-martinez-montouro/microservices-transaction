@@ -1,0 +1,16 @@
+version: "3.4"
+
+services:
+  transaction-gateway:
+    build:
+        context: .
+        dockerfile: Dockerfile
+    image: transaction-gateway:latest
+    ports:
+      - 8080:8080
+    networks:
+        - transaction-networks
+
+networks:
+    transaction-networks:
+        driver: bridge
